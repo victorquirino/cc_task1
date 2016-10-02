@@ -1,0 +1,64 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+.weather-information{
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 10px;
+}
+
+.weather-information span{
+  float: left;
+  clear: both;
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #555;
+}
+.error-msg{
+  font-family: 'Open Sans', sans-serif;
+}
+.input-postalcode-country{
+  width: 330px;
+  padding: 5px;
+  outline: none;
+  float: left;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #555;
+}
+.get-weather-info{
+  float: left;
+  clear: both;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  background: #78c4cc;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 2px;
+}
+.get-weather-info:active{
+  border: none;
+}
+
+.loading-box{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  position: absolute;
+  z-index: 1;
+}
+.loading-box img{
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  margin-top: -72px;
+  left : 50%;
+  margin-left: -100px;
+}
