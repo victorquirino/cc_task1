@@ -26,6 +26,7 @@ task1.controller('GeoCtrl', function($scope, $window, WeatherService){
           $scope.weather = data.weather[0].main;
           $scope.weatherDetails = data.weather[0].description;
           $scope.country = data.sys.country;
+          $scope.errorMsg = '';
         })
         .catch(function (error){
           $scope.errorMsg = 'We are having some troubles, please try again later.'
@@ -48,6 +49,7 @@ task1.controller('GeoCtrl', function($scope, $window, WeatherService){
         $scope.weather = data.weather[0].main;
         $scope.weatherDetails = data.weather[0].description;
         $scope.country = data.sys.country;
+        $scope.errorMsg = '';
       })
       .catch(function (error){
         $scope.errorMsg = 'We are having some troubles, please try again later.'

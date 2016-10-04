@@ -19,6 +19,9 @@ body{
   color: #555;
 }
 .error-msg{
+  float: left;
+  margin: 0px;
+  padding-left: 10px;
   font-family: 'Open Sans', sans-serif;
 }
 .input-postalcode-country{

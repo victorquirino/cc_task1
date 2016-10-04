@@ -12,7 +12,7 @@
     <script src="js/weather.constants.js"></script>
   </head>
   <body ng-controller="GeoCtrl">
-    <div class="weather-information" ng-show="geoLocationCoords">
+    <div class="weather-information" ng-show="geoLocationCoords && errorMsg === ''">
       <span ng-show="nameCity">City: {{nameCity}}</span>
       <span ng-show="country">Country: {{country}}</span>
       <span ng-show="weather">Weather: {{weather}}</span>
@@ -28,10 +28,12 @@
         class="input-postalcode-country" />
       <button type="button" name="send" value="Send" class="get-weather-info" ng-click="getWeatherByCountry()">Send</button>
 
-      <span ng-show="nameCity">City: {{nameCity}}</span>
-      <span ng-show="country">Country: {{country}}</span>
-      <span ng-show="weather">Weather: {{weather}}</span>
-      <span ng-show="weatherDetails">Weather details: {{weatherDetails}}</span>
+      <div ng-show="errorMsg === ''">
+        <span ng-show="nameCity">City: {{nameCity}}</span>
+        <span ng-show="country">Country: {{country}}</span>
+        <span ng-show="weather">Weather: {{weather}}</span>
+        <span ng-show="weatherDetails">Weather details: {{weatherDetails}}</span>
+      </div>
     </div>
 
     <div class="loading-box" ng-show="loadingView">
