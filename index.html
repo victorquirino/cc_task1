@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="task1">
+  <head>
+    <meta charset="utf-8">
+    <title>Compucorp Task 1</title>
+    <link rel="stylesheet" href="css/home.css" media="screen" title="">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="js/weather.controller.js"></script>
+    <script src="js/weather.services.js"></script>
+    <script src="js/weather.constants.js"></script>
+  </head>
+  <body ng-controller="GeoCtrl">
+    <div class="weather-information" ng-show="geoLocationCoords && errorMsg === ''">
+      <span ng-show="nameCity">City: {{nameCity}}</span>
+      <span ng-show="country">Country: {{country}}</span>
+      <span ng-show="weather">Weather: {{weather}}</span>
+      <span ng-show="weatherDetails">Weather details: {{weatherDetails}}</span>
+    </div>
+
+    <div class="weather-information" ng-show="!geoLocationCoords">
+      <input
+        type="text"
+        name="PostalCodeCountry"
+        placeholder="Please, enter your city, country or post code"
+        ng-model="PostalCodeCountry"
+        class="input-postalcode-country" />
+      <button type="button" name="send" value="Send" class="get-weather-info" ng-click="getWeatherByCountry()">Send</button>
+
+      <div ng-show="errorMsg === ''">
+        <span ng-show="nameCity">City: {{nameCity}}</span>
+        <span ng-show="country">Country: {{country}}</span>
+        <span ng-show="weather">Weather: {{weather}}</span>
+        <span ng-show="weatherDetails">Weather details: {{weatherDetails}}</span>
+      </div>
+    </div>
+
+    <div class="loading-box" ng-show="loadingView">
+      <img src="img/loading-spinner.gif" alt="" />
+    </div>
+
+    <h4 ng-show="errorMsg" class="error-msg">{{errorMsg}}</h4>
+  </body>
+</html>
